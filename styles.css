@@ -28,6 +28,10 @@ body {
 	box-sizing: border-box;
 	border-right: 1px solid #ccc;
 	overflow-y: auto;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 }
 #preview {
 	flex: 1; /* takes the rest of the space */
@@ -179,8 +183,37 @@ div.mainArea:has(table:only-child) {
 
 div.settingsBlock.disabled {
 	opacity: 0.5;
-	pointer-events: none;
 }
-div.settingsBlock.disabled *:not(:first-child) {
+div.settingsBlock.disabled > *:not(:first-child) {
 	display: none;
+}
+
+div.settingsBlock {
+	margin-bottom: 1em;
+	border-top: 2px solid #ccc;
+	padding: 0.5em;
+}
+
+div.settingsBlock h2 {
+	margin: 0;
+	padding: 0;
+}
+
+div.settingsBlock .header {
+	display: flex;
+	gap: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+div.settingsBlock div.input {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: row;
+	margin-bottom: 0.3em;
+}
+
+#settingsContainer {
+	flex-grow: 1;
+	overflow-y: auto;
 }

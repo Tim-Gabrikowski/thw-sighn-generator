@@ -3,123 +3,119 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>DoorSign</title>
+		<title>Türschild Designer</title>
 		<link rel="stylesheet" href="styles.css" />
 	</head>
 	<body>
 		<div id="controls">
 			<h1>Türschild Generator</h1>
-			<div class="settingsBlock">
-				<h2>Raum</h2>
-				<div class="input">
-					<label for="roomNumberInput">Raumnummer</label>
-					<input
-						type="text"
-						id="roomNumberInput"
-						placeholder="Hier eingeben"
-					/>
+			<div id="settingsContainer">
+				<div class="settingsBlock">
+					<h2>Raum</h2>
+					<div class="input">
+						<label for="roomNumberInput">Raumnummer</label>
+						<input
+							type="text"
+							id="roomNumberInput"
+							placeholder="Hier eingeben"
+						/>
+					</div>
+					<div class="input">
+						<label for="roomNameInput">Raumname</label>
+						<input
+							type="text"
+							id="roomNameInput"
+							placeholder="Hier eingeben"
+						/>
+					</div>
 				</div>
-				<div class="input">
-					<label for="roomNameInput">Raumname</label>
-					<input
-						type="text"
-						id="roomNameInput"
-						placeholder="Hier eingeben"
-					/>
-				</div>
-			</div>
-			<div class="settingsBlock">
-				<h2>Blöcke</h2>
-				<div class="input">
-					<label for="displayPersonsBlock">Personen</label>
-					<input
-						type="checkbox"
-						name="displayPersonsBlock"
-						id="displayPersonsBlock"
-						checked
-					/>
-				</div>
-				<div class="input">
-					<label for="displayWarningBlock">Warnschild</label>
-					<input
-						type="checkbox"
-						name="displayWarningBlock"
-						id="displayWarningBlock"
-						checked
-					/>
-				</div>
-				<div class="input">
-					<label for="displayImageBlock">Bild</label>
-					<input
-						type="checkbox"
-						name="displayImageBlock"
-						id="displayImageBlock"
-						checked
-					/>
-				</div>
-			</div>
-			<div class="settingsBlock" id="personsBlockSettings">
-				<h2>Personen</h2>
-				<div class="input">
-					<label for="personNameInput">Name</label
-					><input
-						type="text"
-						name="personNameInput"
-						id="personNameInput"
-					/>
-				</div>
-				<div class="input">
-					<label for="personPositionInput">Position</label
-					><input
-						type="text"
-						name="personPositionInput"
-						id="personPositionInput"
-					/>
-				</div>
-				<div class="input">
-					<label for="personImportantInput">Wichtig</label
-					><input
-						type="checkbox"
-						name="personImportantInput"
-						id="personImportantInput"
-					/>
+				<div class="settingsBlock" id="personsBlockSettings">
+					<div class="header">
+						<input
+							type="checkbox"
+							name="displayPersonsBlock"
+							id="displayPersonsBlock"
+							checked
+						/>
+						<h2>Personen</h2>
+					</div>
+					<div class="input">
+						<label for="personNameInput">Name</label
+						><input
+							type="text"
+							name="personNameInput"
+							id="personNameInput"
+						/>
+					</div>
+					<div class="input">
+						<label for="personPositionInput">Position</label
+						><input
+							type="text"
+							name="personPositionInput"
+							id="personPositionInput"
+						/>
+					</div>
+					<div class="input">
+						<label for="personImportantInput">Wichtig</label
+						><input
+							type="checkbox"
+							name="personImportantInput"
+							id="personImportantInput"
+						/>
+					</div>
+
+					<button id="addPersonButton">Person hinzufügen</button>
+
+					<div id="personList"></div>
 				</div>
 
-				<button id="addPersonButton">Person hinzufügen</button>
-
-				<div id="personList"></div>
-			</div>
-
-			<div class="settingsBlock" id="warningBlockSettings">
-				<h2>Warnschild</h2>
-				<div class="input">
-					<label for="warningHeadingInput">Überschrift</label>
-					<input
-						type="text"
-						name="warningHeadingInput"
-						id="warningHeadingInput"
-					/>
+				<div class="settingsBlock" id="warningBlockSettings">
+					<div class="header">
+						<input
+							type="checkbox"
+							name="displayWarningBlock"
+							id="displayWarningBlock"
+							checked
+						/>
+						<h2>Warnschild</h2>
+					</div>
+					<div class="input">
+						<label for="warningHeadingInput">Überschrift</label>
+						<input
+							type="text"
+							name="warningHeadingInput"
+							id="warningHeadingInput"
+						/>
+					</div>
+					<div class="input">
+						<label for="warningTextInput">Text</label>
+						<input
+							type="text"
+							name="warningTextInput"
+							id="warningTextInput"
+						/>
+					</div>
 				</div>
-				<div class="input">
-					<label for="warningTextInput">Text</label>
-					<input
-						type="text"
-						name="warningTextInput"
-						id="warningTextInput"
-					/>
-				</div>
-			</div>
 
-			<div class="settingsBlock" id="imageBlockSettings">
-				<h2>Bild</h2>
-				<div class="input">
-					<label for="imageSrcInput">Bildquelle (Pfad)</label>
-					<input
-						type="text"
-						name="imageSrcInput"
-						id="imageSrcInput"
-						placeholder="./logo/settings.svg"
-					/>
+				<div class="settingsBlock" id="imageBlockSettings">
+					<div class="header">
+						<input
+							type="checkbox"
+							name="displayImageBlock"
+							id="displayImageBlock"
+							checked
+						/>
+						<h2>Bild</h2>
+					</div>
+					<div class="input">
+						<label for="imageSrcInput">Bildquelle (Pfad)</label>
+						<input
+							type="text"
+							name="imageSrcInput"
+							id="imageSrcInput"
+							placeholder="./logo/settings.svg"
+						/>
+					</div>
 				</div>
 			</div>
 			<div id="controlButtons">
