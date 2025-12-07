@@ -37,8 +37,6 @@ body {
 }
 
 .page {
-	position: relative;
-
 	/* Set Page Size here: */
 	height: 105mm;
 	width: 149mm;
@@ -62,11 +60,17 @@ body {
 	#controls {
 		display: none;
 	}
+	#preview {
+		margin: 0;
+		padding: 0;
+		overflow: visible;
+	}
 	.page {
 		margin: 0;
 		overflow: hidden;
 		box-shadow: none;
 		border: 1px dotted black;
+		display: grid;
 	}
 }
 
@@ -174,5 +178,9 @@ div.mainArea:has(table:only-child) {
 }
 
 div.settingsBlock.disabled {
+	opacity: 0.5;
+	pointer-events: none;
+}
+div.settingsBlock.disabled *:not(:first-child) {
 	display: none;
 }
