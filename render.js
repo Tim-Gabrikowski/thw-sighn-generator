@@ -19,23 +19,34 @@ async function renderPreview(configuration) {
 
 	// Add blocks based on configuration
 
+	let bc = 0;
+
 	if (configuration.blocks.persons.enabled) {
 		let personsBlock = generatePersonsBlock(configuration.blocks.persons);
 		renderFrame.appendChild(personsBlock);
+		bc++;
 	}
 
 	if (configuration.blocks.warning.enabled) {
 		let warningBlock = generateWarningBlock(configuration.blocks.warning);
 		renderFrame.appendChild(warningBlock);
+		bc++;
 	}
 
 	if (configuration.blocks.image.enabled) {
 		let imageBlock = await generateImageBlock(configuration.blocks.image);
 		renderFrame.appendChild(imageBlock);
+		bc++;
 	}
 
 	// fill the main Area
 	let mainArea = document.getElementById("mainArea");
+
+	if (bc === 1) {
+		renderFrame.classList.add("singleChild");
+	} else {
+		renderFrame.classList.remove("singleChild");
+	}
 
 	mainArea.parentNode.replaceChild(renderFrame, mainArea);
 }

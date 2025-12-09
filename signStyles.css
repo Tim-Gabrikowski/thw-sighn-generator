@@ -21,8 +21,6 @@
 	grid-template-rows: 15mm 90mm;
 	grid-column-gap: 0px;
 	grid-row-gap: 0px;
-
-	/* outline: 1mm dashed black; */
 }
 
 @media print {
@@ -40,6 +38,9 @@
 		box-shadow: none;
 		border: 1px dotted black;
 		display: grid;
+	}
+	body {
+		background-color: white;
 	}
 }
 
@@ -95,6 +96,11 @@
 	flex-direction: column;
 	align-items: center;
 	gap: 0.5em;
+}
+
+div.mainArea.singleChild {
+	flex-grow: 1;
+	justify-content: center;
 }
 
 .page > div.mainArea table {
@@ -163,8 +169,4 @@ div.image img {
 	object-fit: contain;
 }
 
-div.mainArea:has(div:only-child),
-div.mainArea:has(table:only-child) {
-	flex-grow: 1;
-	justify-content: center;
-}
+
