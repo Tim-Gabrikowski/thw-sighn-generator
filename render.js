@@ -10,6 +10,17 @@ async function renderPreview(configuration) {
 	let roomNameElement = document.getElementById("roomName");
 	roomNameElement.textContent = configuration.roomName;
 
+	if (configuration.roomName.length >= 28) {
+		roomNameElement.classList.add("smallest");
+		roomNameElement.classList.remove("smaller");
+	} else if (configuration.roomName.length >= 20) {
+		roomNameElement.classList.add("smaller");
+		roomNameElement.classList.remove("smallest");
+	} else {
+		roomNameElement.classList.remove("smaller");
+		roomNameElement.classList.remove("smallest");
+	}
+
 	let roomNumberElement = document.getElementById("roomNumber");
 	roomNumberElement.textContent = configuration.roomNumber;
 

@@ -79,6 +79,14 @@
 	font-style: bold;
 	font-size: 28pt;
 }
+#roomName.smaller {
+	font-size: 20pt;
+	line-height: 1.1;
+}
+#roomName.smallest {
+	font-size: 16pt;
+	line-height: 1.1;
+}
 
 .page > div.logo {
 	padding: 0.2em;
